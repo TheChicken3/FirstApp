@@ -99,6 +99,9 @@ public class LoginF extends Fragment {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(getActivity(), "Stupid you just got hacked LMAO", Toast.LENGTH_SHORT).show();
+                                    FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+                                    ft.replace(R.id.FrameLayoutMain , new AddData()) ;
+                                    ft.commit() ;
                                 } else {
                                     Toast.makeText(getActivity(), "wrong email or password my guy", Toast.LENGTH_SHORT).show();
                                 }
