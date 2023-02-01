@@ -4,12 +4,14 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -29,6 +31,7 @@ public class SignUpF extends Fragment {
     EditText username , password , repassword ;
     Button bt ;
     FirebaseServices fbs ;
+    TextView SignIn ;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -80,6 +83,7 @@ public class SignUpF extends Fragment {
         username = getView().findViewById(R.id.ETUsernameSignUP);
         password = getView().findViewById(R.id.ETPasswordSignUp);
         repassword = getView().findViewById(R.id.ETRePasswordSignUp);
+        SignIn = getView().findViewById(R.id.SignInTransportar);
         bt = getView().findViewById(R.id.SignUpButtonSignUp);
         bt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -117,6 +121,15 @@ public class SignUpF extends Fragment {
                 }) ;
             }
         });
+        SignIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.FrameLayoutMain , new LoginF()) ;
+                ft.commit() ;
+            }
+        });
+
     }
 
     public static boolean isValidPassword(final String password) {

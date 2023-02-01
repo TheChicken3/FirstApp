@@ -4,12 +4,14 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -28,6 +30,7 @@ public class LoginF extends Fragment {
     EditText username , password ;
     Button Login ;
     FirebaseServices fbs ;
+    TextView SignUp , ForgotPassword;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -78,6 +81,8 @@ public class LoginF extends Fragment {
         fbs = FirebaseServices.getInstance() ;
         username = getView().findViewById(R.id.ETUsernameSignUP) ;
         password = getView().findViewById(R.id.ETPasswordSignUp) ;
+        ForgotPassword = getView().findViewById(R.id.ForgotPasswordTransporter) ;
+        SignUp = getView().findViewById(R.id.SignUpTransportar) ;
         Login = getView().findViewById(R.id.SignUpButtonSignUp) ;
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,6 +104,24 @@ public class LoginF extends Fragment {
                                 }
                             }
                         });
+            }
+        });
+
+        SignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.FrameLayoutMain , new SignUpF()) ;
+                ft.commit() ;
+            }
+        });
+
+        ForgotPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.FrameLayoutMain , new ForgotPassword()) ;
+                ft.commit() ;
             }
         });
     }

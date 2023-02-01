@@ -61,15 +61,6 @@
             android:textColorHint="#FFFBF6" />
 
 
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:buttonTint="#FFFBF6"
-            android:hint="#FFFBF6"
-            android:text="Keep me Signed in "
-            android:textColor="#FFFBF6" />
-
         <Button
             android:id="@+id/SignUpButtonSignUp"
             android:layout_width="250dp"
@@ -87,15 +78,7 @@
             android:background="#3fff" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:text="Forget Pasword"
-            android:textColor="#FFFBF6"
-            android:textSize="18dp" />
-
-        <TextView
-            android:id="@+id/textView"
+            android:id="@+id/SignInTransportar"
             android:layout_width="77dp"
             android:layout_height="27dp"
             android:text="GoBack"

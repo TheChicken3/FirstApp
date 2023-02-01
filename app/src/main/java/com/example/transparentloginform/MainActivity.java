@@ -16,10 +16,4 @@ public class MainActivity extends AppCompatActivity {
         ft.replace(R.id.FrameLayoutMain , new LoginF()) ;
         ft.commit() ;
     }
-
-    public void theya(View view) {
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.FrameLayoutMain , new SignUpF()) ;
-        ft.commit() ;
-    }
 }
